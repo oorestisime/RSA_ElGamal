@@ -51,6 +51,12 @@ public class Chiffrement {
         String s1=new String(rsa_2.decrypt(cipher3).getText().toByteArray());
         String s2=new String(rsa_2.decrypt(cipher4).getText().toByteArray());
         System.out.println("s1+s2 = "+s1+s2);
+        
+        
+        // encryption(String s)
+       RSA_Ciphertext cipher5=rsa_2.encrypt("Orestis Ioannou");
+       String deciphered=new String(rsa_2.decrypt(cipher5).getText().toByteArray());
+       System.out.println("Orestis Ioannou = "+deciphered);
        
     }
     

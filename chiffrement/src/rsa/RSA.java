@@ -46,6 +46,13 @@ public class RSA implements CipherScheme {
         cipherT=new RSA_Ciphertext(cipher);
         return cipherT;
     }
+    public RSA_Ciphertext encrypt(String s){
+        RSA_Ciphertext cipherT;
+        byte bytes[]=s.getBytes();
+        BigInteger res=new BigInteger(bytes);
+        cipherT=encrypt(new RSA_PlainText(res));
+        return cipherT;
+    }
     public RSA_PlainText decrypt(RSA_Ciphertext ct){
         RSA_PlainText plainT;
         BigInteger plain=ct.getCipher().modPow(getKeys().getSk().getD(), getKeys().getPk().getN());
