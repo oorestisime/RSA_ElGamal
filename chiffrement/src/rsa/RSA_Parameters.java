@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class RSA_Parameters implements Parameters {
 
-    private int nb_bits;
+   private int nb_bits;
    private Random prg;
 
    public RSA_Parameters(int nb_bits,Random prg){

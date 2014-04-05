@@ -6,10 +6,13 @@
 
 package chiffrement;
 
+import java.math.BigInteger;
+
 /**
  *
  * @author oorestisime
  */
 public interface PublicKey {
-    
+    public BigInteger getN();
+    public BigInteger getE();
 }

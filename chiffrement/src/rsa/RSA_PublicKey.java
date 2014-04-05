@@ -6,6 +6,7 @@
 
 package rsa;
 
+import chiffrement.*;
 import java.math.BigInteger;
 import java.util.Random;
 
@@ -13,7 +14,7 @@ import java.util.Random;
  *
  * @author oorestisime
  */
-public class RSA_PublicKey {
+public class RSA_PublicKey implements PublicKey{
  
     private BigInteger N;
     private BigInteger e;
@@ -25,6 +26,7 @@ public class RSA_PublicKey {
     /**
      * @return the N
      */
+    @Override
     public BigInteger getN() {
         return N;
     }
@@ -32,6 +34,7 @@ public class RSA_PublicKey {
     /**
      * @return the e
      */
+    @Override
     public BigInteger getE() {
         return e;
     }

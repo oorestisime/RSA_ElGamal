@@ -6,10 +6,16 @@
 
 package chiffrement;
 
+import java.math.BigInteger;
+
 /**
  *
  * @author oorestisime
  */
 public interface SecretKey {
+    
+    public BigInteger getD(); 
+    public BigInteger getP(); 
+    public BigInteger getQ(); 
     
 }

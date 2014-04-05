@@ -6,13 +6,14 @@
 
 package rsa;
 
+import chiffrement.*;
 import java.math.BigInteger;
 
 /**
  *
  * @author oorestisime
  */
-public class RSA_SecretKey {
+public class RSA_SecretKey implements SecretKey {
     private BigInteger d;
     private BigInteger p;
     private BigInteger q;
@@ -25,6 +26,7 @@ public class RSA_SecretKey {
     /**
      * @return the d
      */
+    @Override
     public BigInteger getD() {
         return d;
     }
@@ -32,6 +34,7 @@ public class RSA_SecretKey {
     /**
      * @return the p
      */
+    @Override
     public BigInteger getP() {
         return p;
     }
@@ -39,6 +42,7 @@ public class RSA_SecretKey {
     /**
      * @return the q
      */
+    @Override
     public BigInteger getQ() {
         return q;
     }
