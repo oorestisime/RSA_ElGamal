@@ -14,11 +14,11 @@ import chiffrement.*;
  * @author oorestisime
  */
 public class RSA_PlainText implements PlainText {
-    private BigInteger plt;
-    public RSA_PlainText(BigInteger pt){
+    private BigInteger[] plt;
+    public RSA_PlainText(BigInteger[] pt){
         this.plt=pt;
     }
-    public BigInteger getText(){
+    public BigInteger[] getText(){
         return plt;
     }
 }

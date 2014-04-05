@@ -13,12 +13,16 @@ import chiffrement.*;
  * @author oorestisime
  */
 public class RSA_Ciphertext implements CipherText {
-    private BigInteger cit;
-    public RSA_Ciphertext(BigInteger ct){
-        this.cit=ct;
+    private BigInteger[]ciphers; 
+    
+    public RSA_Ciphertext(BigInteger[]ct){
+        this.ciphers=ct;
     }
-    public BigInteger getCipher(){
-        return cit;
-
+    /**
+     * @return the ciphers
+     */
+    public BigInteger[] getCiphers() {
+        return ciphers;
     }
+    
 }
