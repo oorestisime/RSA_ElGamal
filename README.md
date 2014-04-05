@@ -9,7 +9,7 @@ I used NetBeans IDE for developing.
 * Encryption by blocs for long texts.
 * Public - Secret key generator.
 
-######TODO:
+#####TODO:
 
 * start ElGamal encryption scheme
 * Basic Interface to save, import keypairs. Save encryption result and decryption.
