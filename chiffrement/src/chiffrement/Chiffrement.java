@@ -6,8 +6,16 @@
 
 package chiffrement;
 
+import elgamal.Elgamal;
+import elgamal.Elgamal_CipherText;
+import elgamal.Elgamal_PlainText;
+import java.io.UnsupportedEncodingException;
+import java.util.LinkedList;
 import java.math.BigInteger;
-import java.util.Arrays;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import rsa.*;
 
 /**
@@ -24,14 +32,28 @@ public class Chiffrement {
         // New keyset encryption.
         
         // Encryption using existing keys
-        RSA_KeySet keys=new RSA_KeySet(1024);
+        Elgamal eg=new Elgamal(256);
+        Elgamal_CipherText ct=eg.encrypt(new BigInteger("123000000000000000"));
+        System.out.println(eg.decrypt(ct).getPt());
+        /*ArrayList<BigInteger> list;
+        BigInteger p=new BigInteger("23");
+        list=eg.ordre(new BigInteger("23"));
+        for(int i=0;i<list.size();i++){
+            System.out.println(i+" -> "+list.get(i));
+        }
+        System.out.println();
+        /*RSA_KeySet keys=new RSA_KeySet(1024);
         RSA rsa_2=new RSA(keys);
         
         String s="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-        // fragmentation for long text.        
-        byte bytes[]=s.getBytes();
+        try {
+            // fragmentation for long text.
+            byte bytes[]=s.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Chiffrement.class.getName()).log(Level.SEVERE, null, ex);
+        }
         RSA_Ciphertext cipher1=rsa_2.encrypt(s);
         System.out.println(rsa_2.RSA_PtToString(rsa_2.decrypt(cipher1)));
     }
-    
-}
+    */
+}}

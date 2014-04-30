@@ -27,6 +27,20 @@ public class Elgamal_Parameters implements Parameters {
        this.nb_bits=nb_bits;
        this.prg=new SecureRandom();
    }
+
+    /**
+     * @return the nb_bits
+     */
+    public int getNb_bits() {
+        return nb_bits;
+    }
+
+    /**
+     * @return the prg
+     */
+    public Random getPrg() {
+        return prg;
+    }
  
        
    }
