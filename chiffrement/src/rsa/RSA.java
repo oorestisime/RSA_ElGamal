@@ -34,8 +34,8 @@ public class RSA implements CipherScheme {
     public static BigInteger getPrime(int nb_bits, Random rng){
        return BigInteger.probablePrime(nb_bits,rng);
     }
-    public RSA_Ciphertext encrypt(RSA_PlainText pt){
-       RSA_Ciphertext cipherT;
+    public RSA_CipherText encrypt(RSA_PlainText pt){
+       RSA_CipherText cipherT;
        BigInteger[] cipher=new BigInteger[pt.getText().length];
        for(int i=0;i<pt.getText().length;i++){
             //System.out.println("in encrypt "+pt.getText()[i].bitLength()+" number for pk "+getKeys().getPk().getN().bitLength());
@@ -45,11 +45,11 @@ public class RSA implements CipherScheme {
             }
             cipher[i]=pt.getText()[i].modPow(getKeys().getPk().getE(), getKeys().getPk().getN());
        }
-        cipherT=new RSA_Ciphertext(cipher);
+        cipherT=new RSA_CipherText(cipher);
         return cipherT;
     }
-    public RSA_Ciphertext encrypt(String s){
-        RSA_Ciphertext cipherT;
+    public RSA_CipherText encrypt(String s){
+        RSA_CipherText cipherT;
         byte bytes[]=s.getBytes();
         byte[][] chuncked =divideArray(bytes, 127);
         //System.out.println("remainder is "+ s.length()%127);
@@ -73,7 +73,7 @@ public class RSA implements CipherScheme {
         cipherT=encrypt(new RSA_PlainText(chuncks));
         return cipherT;
     }
-    public RSA_PlainText decrypt(RSA_Ciphertext ct){
+    public RSA_PlainText decrypt(RSA_CipherText ct){
         RSA_PlainText plainT;
         BigInteger plain[]=new BigInteger[ct.getCiphers().length];
         //decrypt all blocs

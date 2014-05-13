@@ -6,10 +6,13 @@
 
 package chiffrement;
 
+import java.util.Random;
+
 /**
  *
  * @author oorestisime
  */
 public interface Parameters {
-    
+    public int getNb_bits();
+    public Random getPrg();
 }

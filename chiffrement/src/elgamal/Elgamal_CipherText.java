@@ -13,18 +13,18 @@ import java.math.BigInteger;
  * @author oorestisime
  */
 public class Elgamal_CipherText {
-    private BigInteger ct;
+    private BigInteger mhr[];
     private BigInteger gr;
-    public Elgamal_CipherText(BigInteger p,BigInteger gr){
-        ct=p;
+    public Elgamal_CipherText(BigInteger p[],BigInteger gr){
+        mhr=p;
         this.gr=gr;
     }
 
     /**
-     * @return the ct
+     * @return the mhr
      */
-    public BigInteger getCt() {
-        return ct;
+    public BigInteger[] getCt() {
+        return mhr;
     }
 
     /**

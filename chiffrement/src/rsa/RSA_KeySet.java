@@ -27,13 +27,13 @@ public class RSA_KeySet implements KeySet {
     public RSA_KeySet(int nbits){
        nb_bits=nbits;
        params=new RSA_Parameters(this.nb_bits);
-       BigInteger p=RSA.getPrime((params.getNbBits()/2),params.getRand());  
-       BigInteger q=RSA.getPrime((params.getNbBits()/2),params.getRand()); 
+       BigInteger p=RSA.getPrime((params.getNb_bits()/2),params.getPrg());  
+       BigInteger q=RSA.getPrime((params.getNb_bits()/2),params.getPrg()); 
        BigInteger n=p.multiply(q);
        BigInteger e=new BigInteger("65537");
        BigInteger totient=p.subtract(BigInteger.ONE).multiply((q.subtract(BigInteger.ONE)));
        BigInteger d=e.modInverse(totient);    
-       System.out.println("d * e mod N: "+d.multiply(e).mod(totient));
+       //System.out.println("d * e mod N: "+d.multiply(e).mod(totient));
        pk=new RSA_PublicKey(n,e);
        sk=new RSA_SecretKey(d,p,q);
     }

@@ -26,10 +26,13 @@ public class RSA_Parameters implements Parameters {
        this.nb_bits=nb_bits;
        this.prg=new SecureRandom();
    }
-   public int getNbBits(){
+
+   @Override
+   public int getNb_bits() {
        return this.nb_bits;
    }
-   public Random getRand(){
+   @Override
+   public Random getPrg(){
        return this.prg;
    }
    

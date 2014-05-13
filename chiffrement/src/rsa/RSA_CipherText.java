@@ -12,10 +12,10 @@ import chiffrement.*;
  *
  * @author oorestisime
  */
-public class RSA_Ciphertext implements CipherText {
+public class RSA_CipherText implements CipherText {
     private BigInteger[]ciphers; 
     
-    public RSA_Ciphertext(BigInteger[]ct){
+    public RSA_CipherText(BigInteger[]ct){
         this.ciphers=ct;
     }
     /**
