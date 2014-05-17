@@ -12,6 +12,5 @@ I used NetBeans IDE for developing.
 #####TODO:
 
 * start ElGamal encryption scheme
-* Basic Interface to save, import keypairs. Save encryption result and decryption.
 
 
